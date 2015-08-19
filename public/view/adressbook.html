@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="addressApp">
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light House</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/local.css" />
+      <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/shieldui-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+    <link id="gridcss" rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/dark-bootstrap/all.min.css" />
+
+    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+    <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script> 
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.1.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/local.css" />
+      <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/shieldui-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+    <link id="gridcss" rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/dark-bootstrap/all.min.css" />
+
+    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+    <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>
+
+
+
+
+</head>
+<body>
+
+    <div id="wrapper">
+       
+
+        <div ng-controller="addressController" class="container">
+
+
+        <div class="row">
+          <div class="col-lg-9">
+            <h2 id="nav-tabs">Address Book</h2>
+            <div class="bs-example">
+              <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+
+                <li><a data-target="#details" data-toggle="tab">Manage Contacts</a></li>
+                <li><a data-target="#add" data-toggle="tab">Add a Contact</a></li>
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                
+                <div class="tab-pane fade active in" id="add">
+                  
+                      
+         <div class="panel-body">
+          <div class="form-horizontal row-border" >
+                        {{rescontact.msgs.msg}}<br></br>
+        <div class="form-group">
+              <label class="col-md-2 control-label">Name</label>
+              <div class="col-md-10">
+               <input ng-model="newcontact.name" type="text"  class="form-control">
+              </div>
+        </div> 
+
+        <div class="form-group">
+              <label class="col-md-2 control-label">Email Address</label>
+              <div class="col-md-10">
+                <input ng-model="newcontact.email" type="text" name="email" class="form-control">
+              </div>
+        </div>        
+        <div class="form-group">
+              <label class="col-md-2 control-label">Telephone Number</label>
+              <div class="col-md-10">
+                 <input ng-model="newcontact.tp" type="text" name="tp" class="form-control">
+              </div>
+        </div> 
+
+        
+
+        
+       
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-10">
+                <button  ng-click="addcontact(newcontact);"  class="btn btn-info">
+                  Add Contact
+                </button>
+            </div>
+        </div>
+
+          </div>
+    
+                </div>
+                </div>
+                <div class="tab-pane fade" id="details">
+                    <div class="media-body">
+                        
+                        <label>Enter Telephone Number</label> 
+                        <div class="input-group">
+                          <input ng-model="contact.tp" type="text" class="form-control" placeholder="Telephone Number"> 
+                          <span class="input-group-btn"> 
+                            <button ng-click="searchcontact(contact);" data-target="#vdetails" class="btn btn-primary" type="button">Get Contact Details</button> 
+                          </span>
+                        </div>
+
+                        <div class="well well-lg">
+
+                          <button  ng-click="removecontact(details);"  class="btn btn-link">
+                              Remove Contact
+                          </button><br>
+
+                          <div id="details">
+                          {{details.respond.error}}<br></br>
+                         Name :{{details.respond[0].name}}<br></br>
+                        Email Address:{{details.respond[0].email}}<br></br>
+                         Telephone Number:{{details.respond[0].tp}}<br></br>
+                        
+                          </div>
+                        </div>
+                        
+                      </div>
+                     </div>
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+     </div>
+
+    </div>
+
+</body>
+</html>
